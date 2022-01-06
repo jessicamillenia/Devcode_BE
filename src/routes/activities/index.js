@@ -1,11 +1,7 @@
 const express = require("express");
 const router = express.Router();
-// const activities = require("../../../controllers/v1/activities");
+const activities = require("../../controllers/activities");
 
-router.get('/', function (req, res, next) {
-        res.send('activities');
-    });
-
-// router.get("/", activities.get_all);
+router.get("/", activities.getAll);
 
 module.exports = router;

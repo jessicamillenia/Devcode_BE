@@ -1,20 +1,12 @@
 "use strict";
 
 module.exports = (sequelize, DataTypes) => {
-  const Activity = sequelize.define('activity', {
+  const Activity = sequelize.define('Activity', {
     id: {        
         type: DataTypes.INTEGER,     
         autoIncrement: true,
         primaryKey: true,
         allowNull: false,
-    },          
-    email: {        
-        type: DataTypes.STRING(100),
-        references: {
-        model: 'users',
-        key: 'email'
-        },   
-        allowNull: false
     },
     title: {        
         type: DataTypes.STRING(100),
@@ -36,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   
   Activity.associate = function(models) {
-    Activity.hasOne(models.User, {
+    Activity.belongsTo(models.User, {
       foreignKey: {
         name: 'email',
         type: DataTypes.STRING(100),

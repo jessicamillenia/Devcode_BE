@@ -1,20 +1,10 @@
-"use strict";
-
 module.exports = (sequelize, DataTypes) => {
-  const Todo = sequelize.define('todo', {
+  const Todo = sequelize.define('Todo', {
     id: {        
         type: DataTypes.INTEGER,     
         autoIncrement: true,
         primaryKey: true,
         allowNull: false,
-    },          
-    activity_group_id: {        
-        type: DataTypes.INTEGER,
-        references: {
-        model: 'activities',
-        key: 'id'
-        },
-        allowNull: false
     },
     title: {        
         type: DataTypes.STRING(200),
@@ -44,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   
   Todo.associate = function(models) {
-    Todo.hasOne(models.Activity, {
+    Todo.belongsTo(models.Activity, {
         foreignKey: {
           name: 'activity_group_id',
           type: DataTypes.INTEGER,
