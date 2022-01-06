@@ -1,0 +1,20 @@
+{
+  "name": "devcode-be",
+  "version": "1.0.0",
+  "description": "REST API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/bin/www"
+  },
+  "author": "Jessica Millenia",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "sequelize": "^6.12.5",
+    "sequelize-cli": "^6.3.0"
+  }
+}
