@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-// const todos = require("../../../controllers/v1/todos");
+const todos = require("../../controllers/todos");
 
-router.get('/', function (req, res, next) {
-        res.send('todos');
-    });
-
-// router.get("/", todos.get_all);
+router.get("/", todos.getAll);
+router.get("/:id", todos.getOne);
+router.post("/", todos.create);
+router.delete("/:id", todos.delete);
+router.patch("/:id", todos.update);
 
 module.exports = router;

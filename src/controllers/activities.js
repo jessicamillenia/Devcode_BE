@@ -10,7 +10,7 @@ module.exports = {
                 deleted_at: null
             }
         }).then(data => {
-            data ? response(req, res, 200, 'Success', 'Success', data) :
+            data.length!=0 ? response(req, res, 200, 'Success', 'Success', data) :
                 response(req, res, 404, 'Not Found', 'No data available')
         }).catch(err=>{
             response(req, res, 500, "Something went wrong", err.message)
